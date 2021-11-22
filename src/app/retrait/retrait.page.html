@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>Mes retraits</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/tabs"> </ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- fab placed to the top end -->
+  <ion-fab (click)="retrait()" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
+  <ion-list>
+    <ion-item *ngFor="let item of infos" lines="none">
+      <ion-label>
+        <h2>Solde : {{item.credit}}</h2>
+        <h3>{{item.date.seconds * 1000 | date: 'dd-MM-yyyy'}}</h3>
+        <p>{{item.raison}}</p>
+      </ion-label>
+      <ion-badge *ngIf="item.statut==true" color="success" slot="end">Approuvé</ion-badge>
+      <ion-badge *ngIf="item.statut==false" color="danger" slot="end">Non approuvée</ion-badge>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>

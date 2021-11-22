@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>Mes validations</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/tabs"> </ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item  *ngFor="let item of infos"  lines="none"> 
+      <label>
+        <h4>{{item.userName}} (Solde: {{item.credit}})</h4>
+        <p>{{item.date.seconds * 1000 | date: 'dd-MM-yyyy'}}</p>
+      </label>
+      <ion-badge *ngIf="item.statut==false" color="danger" (click)="update(item)" slot="end">Approuver</ion-badge>
+      <ion-badge *ngIf="item.statut==true" color="success" slot="end">Approuvée par {{item.approve_user}}</ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

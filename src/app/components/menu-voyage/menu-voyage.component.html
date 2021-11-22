@@ -1,0 +1,46 @@
+<ion-list padding>
+  <ion-item (click)="agence()">
+    <ion-icon color="primary" name="home-outline"></ion-icon>
+    Mon agence
+    </ion-item>
+  <ion-item (click)="booking()">
+    <ion-icon color="primary" name="bookmarks-outline"></ion-icon>
+   Mes réservations
+  </ion-item>
+  <ion-item (click)="tickets()">
+    <ion-icon color="primary" name="card-outline"></ion-icon>
+    Mes billets
+    </ion-item>
+   
+      <ion-item (click)="achat()">
+        <ion-icon color="primary" name="notifications-circle-outline"></ion-icon>
+        Mes transactions
+        </ion-item>
+        <ion-item (click)="ville()">
+          <ion-icon color="primary" name="business-outline"></ion-icon>
+         Villes
+          </ion-item>
+      <ion-item (click)="notify()">
+        <ion-icon color="primary" name="notifications-circle-outline"></ion-icon>
+        Notifications
+        </ion-item>
+ 
+        <ion-item *ngIf="connect!=true" (click)="login()">
+          <ion-icon color="primary"  name="lock-closed-outline"></ion-icon>
+          Connexion
+          </ion-item>
+
+
+          <ion-item *ngIf="connect==true" (click)="goProfil()">
+            <ion-icon color="primary"  name="person"></ion-icon>
+            Mon profil
+            </ion-item>
+
+
+          <ion-item *ngIf="connect==true" (click)="logout()">
+            <ion-icon color="primary"  name="lock-closed-outline"></ion-icon>
+            Déconnexion
+            </ion-item>
+
+  
+</ion-list>

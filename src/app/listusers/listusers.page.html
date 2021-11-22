@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Utilisateurs</ion-title>
+       
+        <ion-buttons  slot="end" (click)="solde()">
+            <ion-icon slot="icon-only" name="cash"></ion-icon>
+            <ion-badge color="warning" style="position: absolute; right: 15px; top: -5px;">{{credit}} C</ion-badge>
+        </ion-buttons>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/tabs/tab1"> </ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+  <ion-content padding="true">
+      <ion-list>
+          <ion-list-header>
+            Liste de tous les utilisateurs | <span style="color:green;">Pour modifier un utilisateur, Appuyer sur un utilisateur</span>
+          </ion-list-header>
+
+          <ion-item *ngFor="let sta of plati" (click)="edit(sta.email)">
+            <ion-avatar slot="start">
+              <ion-img [src]=sta.photo alt="Photo de Profil" *ngIf="sta.photo!=''"></ion-img>
+              <ion-img [src]="'/assets/ava2.png'" alt="Photo de Profil" *ngIf="sta.photo==''"></ion-img>
+            </ion-avatar>
+            <ion-label>
+              <h2>{{sta.nom}} - {{sta.prenom}}</h2>
+              <h3>{{sta.status}}</h3>
+              <p *ngIf="sta.visible==true">Activé</p>
+              <p *ngIf="sta.visible==false">Désactivé</p>
+            </ion-label>
+            <ion-button *ngIf="sta.visible==false" (click)="redic(sta.id)" size="small">
+                <ion-icon slot="end" name="log-out-outline"></ion-icon>
+                Activer
+            </ion-button>
+          </ion-item>
+      </ion-list>
+  </ion-content>
