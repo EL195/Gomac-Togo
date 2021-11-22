@@ -139,10 +139,10 @@ changeme(){
 		this.km=50;
 	}
 	if(this.course.engin=='Taxi/Climatisé'){
-		this.km=400;
+		this.km=200;
 	}
 	if(this.course.engin=='Tricyclette'){
-		this.km=500;
+		this.km=200;
 	}
 	if(this.course.engin=='Bus'){
 		this.km=1500;
@@ -259,7 +259,7 @@ changeme(){
 				this.km=50;
 			}
 			if(this.course.engin=='Tricyclette'){
-				this.km=500;
+				this.km=200;
 			}
 			if(this.course.engin=='Taxi/Climatisé'){
 				this.km=200;
@@ -336,7 +336,7 @@ changeme(){
 						  let distance=this.gps.calculateDistance(lat1,lat2,lat3,lat4);
 						  this.course.prix=Math.floor(distance*this.km);
 						  if(this.course.engin=='Zem' && 100>this.course.prix){
-                            this.course.prix=100;
+                            this.course.prix=50;
                           }
                           if((this.course.engin=='Taxi'||this.course.engin=='Personnel') && 800>this.course.prix){
                             this.course.prix=800;
@@ -360,10 +360,6 @@ changeme(){
 			  this.presentToast("Votre GPS est desactivé");
 		  });
 
-
-
-
-	   //
 		console.log(this.course);
 		let lat1=this.arrive.getPosition().lat;
 		let lat2=this.depart.getPosition().lat;

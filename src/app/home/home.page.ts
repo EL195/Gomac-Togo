@@ -92,7 +92,7 @@ export class HomePage implements OnInit {
             if (this.role != "Conducteur") {
              // console.log(datas)
               //this.boutique = true;
-              this.presentToast("Bienvenue, veuilleZ créer votre course...");
+              this.presentToast("Bienvenue, veuillez créer votre course...");
             }
             else {
              // this.presentToast("Bienvenue, veuiller créer votre course...");
