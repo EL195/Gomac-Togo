@@ -136,13 +136,13 @@ changeme(){
 		this.km=150;
 	}
 	if(this.course.engin=='Zem'){
-		this.km=50;
+		this.km=100;
 	}
 	if(this.course.engin=='Taxi/Climatisé'){
-		this.km=200;
+		this.km=100;
 	}
 	if(this.course.engin=='Tricyclette'){
-		this.km=200;
+		this.km=100;
 	}
 	if(this.course.engin=='Bus'){
 		this.km=1500;
